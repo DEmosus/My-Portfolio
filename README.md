@@ -284,51 +284,6 @@ All CSS custom properties are declared once in **`src/index.css`** and consumed 
 
 ---
 
-## Customising Content
-
-All changes go in **`src/data/portfolioData.js`**.
-
-### Update your name / roles in the Hero
-
-```js
-export const ROLES = [
-  "Full Stack Developer", // ← change or add roles here
-  "React Specialist",
-  "Node.js Engineer",
-];
-```
-
-### Update the skills marquee
-
-```js
-export const SKILLS = [
-  "HTML / CSS",
-  "JavaScript",
-  "React", // ← add/remove as needed
-];
-```
-
-### Update social links (Footer)
-
-```js
-export const SOCIAL = [
-  { label: "GitHub", href: "https://github.com/yourhandle" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourprofile" },
-  { label: "Twitter", href: "https://twitter.com/yourhandle" },
-];
-```
-
-### Update About stats
-
-```js
-export const STATS = [
-  { num: "9+", label: "Projects Shipped" },
-  { num: "5+", label: "Years Experience" },
-  { num: "12+", label: "Technologies" },
-];
-```
-
----
 
 ## Adding a New Project
 
@@ -348,61 +303,6 @@ export const STATS = [
 ```
 
 3. Save the file. The new card appears automatically in the portfolio grid — no other files need changing.
-
----
-
-## Assets
-
-Place static files in the **`public/`** directory. Vite serves them at the root path automatically:
-
-```
-public/
-└── images/
-    ├── fav-icon.png       ← Browser tab favicon (referenced in index.html)
-    └── IsaacWebCV.pdf     ← Linked by the "Download CV" button in About
-```
-
-Reference them in code without the `public/` prefix:
-
-```js
-// Correct
-<a href="/images/IsaacWebCV.pdf">Download CV</a>
-
-// Wrong — don't include "public/"
-<a href="/public/images/IsaacWebCV.pdf">Download CV</a>
-```
-
----
-
-## Deployment
-
-### Vercel (recommended)
-
-```bash
-# Option A — push to GitHub, connect repo in Vercel dashboard
-# Vercel auto-detects Vite and configures everything
-
-# Option B — deploy via CLI
-npx vercel
-```
-
-### Netlify
-
-Connect your GitHub repo in the Netlify dashboard and set:
-
-| Setting           | Value           |
-| ----------------- | --------------- |
-| Build command     | `npm run build` |
-| Publish directory | `dist`          |
-
-Or drag and drop the `dist/` folder into Netlify's deploy UI after running `npm run build`.
-
-### GitHub Pages
-
-```bash
-npm run build
-npx gh-pages -d dist
-```
 
 ---
 
