@@ -1,0 +1,56 @@
+.skills {
+  padding-bottom: 0;
+}
+
+/* ── Marquee wrapper ── */
+.skills__marquee {
+  overflow: hidden;
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  cursor: ew-resize;
+  margin-top: 1rem;
+}
+
+/* ── Scrolling track ── */
+.skills__track {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ── Individual chip ── */
+.skills__chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid var(--color-border-mid);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.skills__chip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+  background: rgba(220, 38, 38, 0.05);
+}
+
+.skills__chip-dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
